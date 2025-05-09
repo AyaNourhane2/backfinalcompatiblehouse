@@ -56,8 +56,8 @@ checkDatabaseConnection()
 // Routes API
 app.use('/api/auth', authRoutes);
 app.use('/api/management', authenticateToken, usersManagRoutes);
-app.use('/api/payments', authenticateToken, paymentRoutes);
-app.use('/api/tax_payments', authenticateToken, taxPaymentRoutes);
+app.use('/api/payments', paymentRoutes);
+app.use('/api/tax_payments', taxPaymentRoutes);
 app.use('/api/messages', messageRoutes); // Sans authentification
 app.use('/api/housekeeping_tasks', housekeepingTaskRoutes); // Sans authentification
 app.use('/api/staff', staffRoutes); // Sans authentification

@@ -72,24 +72,25 @@ const tableDefinitions = {
       performance DECIMAL(3,1)
     ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci
   `,
+
   payments: `
-    CREATE TABLE IF NOT EXISTS payments (
-      id INT AUTO_INCREMENT PRIMARY KEY,
-      client_name VARCHAR(100) NOT NULL,
-      total_amount DECIMAL(10,2) NOT NULL,
-      payment_method VARCHAR(50) NOT NULL,
-      payment_date DATE NOT NULL
-    ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci
-  `,
-  tax_payments: `
-    CREATE TABLE IF NOT EXISTS tax_payments (
-      id INT AUTO_INCREMENT PRIMARY KEY,
-      type VARCHAR(50) NOT NULL,
-      amount DECIMAL(10,2) NOT NULL,
-      date DATE NOT NULL,
-      status ENUM('payé', 'en attente') NOT NULL DEFAULT 'en attente'
-    ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci
-  `,
+  CREATE TABLE IF NOT EXISTS payments (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    client_name VARCHAR(100) NOT NULL,
+    total_amount DECIMAL(10,2) NOT NULL,
+    payment_method VARCHAR(50) NOT NULL,
+    payment_date DATE NOT NULL
+  ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci
+`,
+tax_payments: `
+  CREATE TABLE IF NOT EXISTS tax_payments (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    type VARCHAR(50) NOT NULL,
+    amount DECIMAL(10,2) NOT NULL,
+    date DATE NOT NULL,
+    status ENUM('payé', 'en attente') NOT NULL DEFAULT 'en attente'
+  ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci
+`,
   messages: `
     CREATE TABLE IF NOT EXISTS messages (
       id INT AUTO_INCREMENT PRIMARY KEY,
